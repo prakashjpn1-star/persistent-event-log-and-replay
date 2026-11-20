@@ -1,6 +1,6 @@
 # Delivery milestones and definition of done
 
-This release baseline retains the supplied requirement identifiers and behavioral boundaries. Detailed implementation choices are linked from the component design index.
+Delivery proceeds through runnable milestones with explicit evidence and release gates. Each milestone builds on the guarantees established by the previous one.
 
 ## Milestones
 
@@ -22,4 +22,4 @@ Each milestone can span several sessions. Maintain commits, continuation notes, 
 
 Deliver source/licence notices, migrations, local launch instructions, append/read/checkpoint contracts, fixture generator with independently calculated outputs, browser application, reducer examples, fault harness, acceptance report, measurements and backup/recovery guide. Every mandatory acceptance case and repetition gate must pass; unresolved correctness defects block release. Neither a schema validator nor an attractive event table proves runtime recovery.
 
-Open choices: language/framework, one canonical store, projection store, serialization/digests, exact segment/retention bounds and package versions. Any later file-based storage or partitioning requires revised guarantees and its own failure tests.
+The reference architecture uses Python services, SQLite canonical/projection stores and canonical JSON digests. Exact framework/library versions and configured segment/retention limits remain tracked decisions. Any later file-based storage or partitioning requires revised guarantees and its own failure tests.
