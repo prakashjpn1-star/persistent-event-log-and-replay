@@ -1,0 +1,10 @@
+{
+  "name": "device-events",
+  "capacityBytes": 67108864,
+  "segmentMaxRecords": 1000,
+  "segmentMaxBytes": 8388608,
+  "retention": {
+    "minimumAgeSeconds": 3600,
+    "targetRetainedBytes": 33554432
+  }
+}

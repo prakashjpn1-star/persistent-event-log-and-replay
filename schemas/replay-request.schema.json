@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/prakashjpn1-star/persistent-event-log-and-replay/schemas/replay-request.schema.json",
+  "title": "Independent bounded replay creation",
+  "type": "object",
+  "properties": {
+    "streamId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "streamGeneration": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "startOffset": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "endExclusive": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "groupName": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "projectionId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "reducerVersion": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    }
+  },
+  "required": [
+    "streamId",
+    "streamGeneration",
+    "startOffset",
+    "endExclusive",
+    "groupName",
+    "projectionId",
+    "reducerVersion"
+  ],
+  "additionalProperties": false
+}

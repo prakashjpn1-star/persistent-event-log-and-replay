@@ -26,3 +26,7 @@ This release baseline retains the supplied requirement identifiers and behaviora
 Append example: `{"events":[{"type":"device-created","schemaVersion":1,"payload":{"deviceId":"synthetic-001","label":"sample"}}]}` with producer identity and operation key outside event payload. Checkpoint example: `{"instanceId":"local-consumer-1","epoch":4,"nextOffset":100}`.
 
 All mutations define scoped idempotency and expected-revision rules. Use 400 malformed request, 422 contract error, 403 denied identity, 404 absent resource, 409 stale epoch/key/revision, 413 size limit, 416 unavailable offset range and 503 storage unavailable. Return structured error code/message/correlation ID and current bounds where safe. Paginate administration lists with stable cursors, default 50/maximum 200.
+
+## Machine-readable companions
+
+The [schema catalog](../../schemas/README.md) and [worked examples](../../examples/README.md) define proposed request shapes. They add structural checks while the accepting transaction retains responsibility for revisions, authority and state-dependent rules.

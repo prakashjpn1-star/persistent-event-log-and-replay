@@ -1,0 +1,9 @@
+{
+  "streamId": "device-events",
+  "streamGeneration": "stream-generation-demo",
+  "startOffset": 0,
+  "endExclusive": 4,
+  "groupName": "replay-demo-001",
+  "projectionId": "projection-replay-001",
+  "reducerVersion": 1
+}

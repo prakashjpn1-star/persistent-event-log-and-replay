@@ -1,0 +1,35 @@
+{
+  "events": [
+    {
+      "type": "device-created",
+      "schemaVersion": 1,
+      "payload": {
+        "deviceId": "synthetic-001",
+        "label": "Demo sensor"
+      }
+    },
+    {
+      "type": "reading-recorded",
+      "schemaVersion": 1,
+      "payload": {
+        "deviceId": "synthetic-001",
+        "reading": 42
+      }
+    },
+    {
+      "type": "label-changed",
+      "schemaVersion": 1,
+      "payload": {
+        "deviceId": "synthetic-001",
+        "label": "Demo sensor revised"
+      }
+    },
+    {
+      "type": "retired",
+      "schemaVersion": 1,
+      "payload": {
+        "deviceId": "synthetic-001"
+      }
+    }
+  ]
+}

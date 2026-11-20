@@ -1,0 +1,6 @@
+{
+  "streamId": "device-events",
+  "streamGeneration": "stream-generation-demo",
+  "name": "current-device-view",
+  "nextOffset": 0
+}

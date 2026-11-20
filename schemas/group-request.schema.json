@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/prakashjpn1-star/persistent-event-log-and-replay/schemas/group-request.schema.json",
+  "title": "Durable consumer group creation",
+  "type": "object",
+  "properties": {
+    "streamId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "streamGeneration": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "nextOffset": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    }
+  },
+  "required": [
+    "streamId",
+    "streamGeneration",
+    "name",
+    "nextOffset"
+  ],
+  "additionalProperties": false
+}

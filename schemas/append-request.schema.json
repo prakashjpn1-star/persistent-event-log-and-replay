@@ -1,0 +1,163 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/prakashjpn1-star/persistent-event-log-and-replay/schemas/append-request.schema.json",
+  "title": "Atomic ordered append request",
+  "type": "object",
+  "properties": {
+    "events": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "device-created"
+              },
+              "schemaVersion": {
+                "const": 1
+              },
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "deviceId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  }
+                },
+                "required": [
+                  "deviceId",
+                  "label"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "schemaVersion",
+              "payload"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "reading-recorded"
+              },
+              "schemaVersion": {
+                "const": 1
+              },
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "deviceId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  "reading": {
+                    "type": "integer",
+                    "minimum": -1000000,
+                    "maximum": 1000000
+                  }
+                },
+                "required": [
+                  "deviceId",
+                  "reading"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "schemaVersion",
+              "payload"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "label-changed"
+              },
+              "schemaVersion": {
+                "const": 1
+              },
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "deviceId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 256
+                  }
+                },
+                "required": [
+                  "deviceId",
+                  "label"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "schemaVersion",
+              "payload"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "type": {
+                "const": "retired"
+              },
+              "schemaVersion": {
+                "const": 1
+              },
+              "payload": {
+                "type": "object",
+                "properties": {
+                  "deviceId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128
+                  }
+                },
+                "required": [
+                  "deviceId"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "type",
+              "schemaVersion",
+              "payload"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "minItems": 1,
+      "maxItems": 100
+    }
+  },
+  "required": [
+    "events"
+  ],
+  "additionalProperties": false
+}
